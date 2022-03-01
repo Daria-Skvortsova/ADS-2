@@ -9,10 +9,10 @@ double pown(double value, uint16_t n) {
   if (n == 1) {
     return value;
   } else {
-	while (i <= n) {
+    while (i <= n) {
       otvet *= value;
-	  i++;
-	}
+      i++;
+    }
     }
   return  otvet;
 }
@@ -36,11 +36,11 @@ double expn(double x, uint16_t count) {
   if (x == 0) {
     return 1;
   } else {
-	  while (n <= count) {
-	    otvet = otvet + calcItem(x, n);
-		n++;
-	  }
-	}
+    while (n <= count) {
+      otvet = otvet + calcItem(x, n);
+      n++;
+    }
+    }
   return otvet;
 }
 
@@ -49,7 +49,7 @@ double sinn(double x, uint16_t count) {
   double n = 1;
   while (n <= count) {
     double n_1 = 2 * n - 1;
-    double n_2 = pow(-1, n - 1);
+    double n_2 = pown(-1, n - 1);
     otvet = n_2 * calcItem(x, n_1) + otvet;
     n++;
   }
@@ -61,7 +61,7 @@ double cosn(double x, uint16_t count) {
   double n = 1;
   while (n <= count) {
     double n_1 = 2 * n - 2;
-    double n_2 = pow(-1, n - 1);
+    double n_2 = pown(-1, n - 1);
     otvet = n_2 * calcItem(x, n_1) + otvet;
     n++;
   }
